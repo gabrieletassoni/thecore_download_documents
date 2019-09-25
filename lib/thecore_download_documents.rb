@@ -42,9 +42,8 @@ module ThecoreDownloadDocuments
 
   def self.csv_table rows, table_headers, filename
     csv = CSV.generate do |row|
-      row << table_headers
-      rows.each do |r|
-        row << r.values
+      rows.unshift(table_headers).each do |data|
+        row << data
       end
     end
 
