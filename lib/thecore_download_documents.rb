@@ -43,7 +43,6 @@ module ThecoreDownloadDocuments
   def self.csv_table rows, table_headers, filename
     csv = CSV.generate do |row|
       row << table_headers
-      row << ["another", "row"]
       rows.each do |r|
         row << r.values
       end
