@@ -1,9 +1,9 @@
-require "thecore_download_documents/railtie"
-
-require 'thecore'
+require 'thecore_ui_rails_admin'
 require "prawn"
 require "prawn/table"
 require 'csv'
+require "thecore_download_documents/railtie"
+
 module ThecoreDownloadDocuments
   # Your code goes here...
   def self.pdf_table header, footer, rows, table_headers, filename
