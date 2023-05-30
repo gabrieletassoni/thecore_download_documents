@@ -1,4 +1,5 @@
 require 'thecore_ui_rails_admin'
+require 'matrix'
 require "prawn"
 require "prawn/table"
 require 'csv'

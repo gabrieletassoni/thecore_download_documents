@@ -28,4 +28,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "thecore_ui_commons", "~> 3.0"
   spec.add_dependency "prawn", "~> 2.2"
   spec.add_dependency "prawn-table", "~> 0.2"
+  spec.add_dependency "matrix", "~> 0.4"
 end
