@@ -12,8 +12,8 @@ gemspec
 # until Rails 8 ships a compatible activesupport release.
 gem 'json', '< 3.0'
 
-# test/dummy/config/database.yml uses the sqlite3 adapter but nothing declared it.
-gem "sqlite3"
+# test/dummy/config/database.yml uses the postgresql adapter (Postgres is the only DB target).
+gem "pg"
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
