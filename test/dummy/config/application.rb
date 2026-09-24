@@ -22,6 +22,16 @@ Rails::Application::Configuration.prepend(Module.new do
   define_method(:assets) { @_stub_assets ||= stub_class.new }
 end)
 
+# Stub ModelDrivenApi.smart_merge — model_driven_api is not in this gem's bundle, but
+# thecore_backend_commons calls ::ModelDrivenApi.smart_merge at boot (its TimeZoneAware concern,
+# declared on PushMessage, and its ApplicationRecord concern) without declaring a dependency on it.
+# Same stub as thecore_backend_commons's and thecore_ui_rails_admin's own dummy apps use.
+module ModelDrivenApi
+  def self.smart_merge(base, additions)
+    base.merge(additions) { |_, a, b| a.is_a?(Array) && b.is_a?(Array) ? (a + b).uniq : b }
+  end
+end
+
 Bundler.require(*Rails.groups)
 require "thecore_download_documents"
 

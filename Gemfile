@@ -22,3 +22,10 @@ gem "pg"
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+# minitest 6 changed Minitest::Runnable.run's arity; Rails 7.2.3's railties line filtering
+# (rails/test_unit/line_filtering.rb) still calls it the 5.x way, so every test run crashes with
+# "wrong number of arguments (given 3, expected 1..2)". Rails 7.2.3.1+ caps minitest < 6 itself,
+# but pin here so the suite runs regardless of which Rails patch release resolves (mytask pins
+# minitest ~> 5.0 for the same reason).
+gem "minitest", "< 6", group: [:development, :test]

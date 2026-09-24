@@ -7,3 +7,8 @@ test/dummy/log/*.log
 test/dummy/storage/
 test/dummy/tmp/
 *.gem
+
+# Local bundle (BUNDLE_PATH=vendor/bundle) and lockfile — a gem does not commit its lockfile;
+# same as thecore_backend_commons, thecore_ui_rails_admin and mytask.
+/vendor/bundle
+Gemfile.lock
